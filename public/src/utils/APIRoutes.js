@@ -1,4 +1,4 @@
-export const host = "chat-app-original-1j3n.vercel.app
+export const host = "https://chat-app-original.vercel.app/
 ";
 export const loginRoute = `${host}/api/auth/login`;
 export const registerRoute = `${host}/api/auth/register`;
