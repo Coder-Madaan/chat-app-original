@@ -20,8 +20,7 @@ export default function ChatContainer({currentChat,currentUser,socket }) {
                         from: currentUser._id,
                         to: currentChat._id
                     });
-                    // console.log('Message Data:', response.data);
-                    // console.log(response.data);
+                   
                     setMessages(response.data);
                 }
             } catch (error) {

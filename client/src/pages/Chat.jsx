@@ -68,18 +68,19 @@ function Chat() {
     setCurrentChat(chat)
   }
   return (
-    <Container>
-      <div className="container">
-        <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
+    <Container className="h-[100vh] w-[100vw] flex flex-col justify-center items-center gap-4 bg-[#131324] ">
+      <div className="container h-[85vh] w-[85vw] bg-[#00000076] grid grid-cols-2">
+        <Contacts  contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
         
         {isLoaded && currentChat===undefined?<Welcome currentUser={currentUser}/>:<ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket}/>}
       </div>
     </Container>
   )
 }
+
 const Container=styled.div`
 height: 100vh;
-  width: 100vw;
+ width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,6 +95,12 @@ height: 100vh;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
+    }
+    @media screen and (min-width: 480 px) and (max-width: 720) {
+      grid-template-columns: 45% 55%;
+    }
+      @media screen and (min-width: 360 px) and (max-width: 480) {
+      grid-template-columns: 60% 40%;
     }
   }
 `

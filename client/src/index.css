@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  max-height: 100vh;
-  max-width: 100vw;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

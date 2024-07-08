@@ -20,7 +20,7 @@ app.use("/api/messages",messagesRoute)
 
 
 mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser:true
+   
 }).then(()=>{
     console.log("Mongo connected")
 }).catch((err)=>{

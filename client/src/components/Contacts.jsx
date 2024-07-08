@@ -25,17 +25,17 @@ export default function Contacts({contacts,currentUser,changeChat}) {
    return  (
      <>
        {currentUserImage && currentUserName && (
-         <Container>
-           <div className="brand">
+         <Container className='grid grid-rows-3 '>
+           <div className="brand ">
              <img src={Logo} alt="logo" />
-             <h3>snappy</h3>
+             <h3>Snappy</h3>
            </div>
            <div className="contacts">
              {contacts.map((contact, index) => {
                return (
                  <div
                    key={index}
-                   className={`contact ${
+                   className={`contact sm: width-100% gap-0.5 ${
                      index === currentSelected ? "selected" : ""
                    }`}
                     onClick={() => changeCurrentChat(index, contact)}
@@ -46,7 +46,7 @@ export default function Contacts({contacts,currentUser,changeChat}) {
                        alt="avatar"
                      />
                    </div>
-                   <div className="username">
+                   <div className="username sm:text-sm">
                      <h3>{contact.username}</h3>
                    </div>
                  </div>
@@ -63,7 +63,7 @@ export default function Contacts({contacts,currentUser,changeChat}) {
                />
              </div>
              <div className="username">
-               <h2>{currentUserName}</h2>
+               <h2 className='text-white'>{currentUserName}</h2>
              </div>
            </div>
          </Container>
@@ -151,6 +151,16 @@ export default function Contacts({contacts,currentUser,changeChat}) {
        .username {
          h2 {
            font-size: 1rem;
+           color:white
+         }
+       }
+
+       @media screen and (min-width: 360px) and (max-width: 480px) {
+      gap: 0.5rem;
+       .username {
+         h2 {
+           font-size: 0.8rem;
+           color:white
          }
        }
      }
